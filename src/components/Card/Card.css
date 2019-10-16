@@ -1,0 +1,33 @@
+.topContainer {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+}
+
+.ic_avatar_cat {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+  }
+
+  .Tommy-Cummings {
+    width: 124px;
+    height: 19px;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-family: AppleSDGothicNeo;
+    font-size: 15px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.27;
+    letter-spacing: normal;
+    color: rgba(0, 0, 0, 0.74);
+  }
+
+  .Rectangle {
+    width: 268px;
+    height: 268px;
+    margin-top: 10px;
+    border-radius: 10px;
+  }

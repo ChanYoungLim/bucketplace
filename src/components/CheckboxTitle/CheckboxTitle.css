@@ -1,0 +1,43 @@
+.checkbox_container {
+    margin-left: 59px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+}
+
+.\- {
+    width: 244px;
+    height: 19px;
+    margin-left: 6px;
+    margin-top: 3px;
+    font-family: AppleSDGothicNeo;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #424242;
+}
+
+.text {
+    width: 244px;
+    height: 19px;
+    margin-left: 6px;
+    margin-top: 3px;
+    font-family: AppleSDGothicNeo;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #424242;
+}
+
+  .bt_checkbox_checked {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
