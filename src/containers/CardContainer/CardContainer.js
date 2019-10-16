@@ -3,7 +3,6 @@ import {Card, CardWrapper} from '../../components';
 import * as service from '../../services/Card';
 
 class CardContainer extends Component {
-
     constructor(props) {
         super();
         this.state = {
@@ -14,7 +13,18 @@ class CardContainer extends Component {
     }
     componentDidMount() {
         this.fetchCardInfo(1);
+        window.addEventListener("scroll", this.handleScroll);
     }
+
+    handleScroll = () => {
+        const { innerHeight } = window;
+        const { scrollHeight } = document.body;
+        const scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+
+        if (scrollHeight - innerHeight - scrollTop < 100) {
+            this.fetchCardInfo(this.state.page + 1);
+        }
+      };
 
     fetchCardInfo = async (page) => {
         this.setState({
@@ -22,7 +32,6 @@ class CardContainer extends Component {
         });
 
         const cardData = await service.getCards(page);
-        //console.log(cardData.data);
         this.setState(state => {
             const cards = state.cards.concat(cardData.data);
 

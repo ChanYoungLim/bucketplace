@@ -3,7 +3,7 @@ import './CardWrapper.css';
 
 const CardWrapper = ({children}) => {
     return (
-        <div className="card_container">
+        <div className="card_wrapper_container">
             {children}
         </div>
     );
