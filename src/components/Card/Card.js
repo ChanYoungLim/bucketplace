@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from 'react-redux';
 import "./Card.css";
 
 const onImg = "/img/on-img/on-img.png";
@@ -8,9 +9,14 @@ const blue = "/img/blue/blue.png";
 const blue2 = "/img/blue/blue@2x.png";
 const blue3 = "/img/blue/blue@3x.png";
 
+// 카드 View
 const Card = ({ id, image_url, nickname, profile_image_url }) => {
+  // onlyFavorite : 스크랩한 것만 보기 상태
+  const onlyFavorite = useSelector(state => state.card.onlyFavorite);
+  // Checked : Card에 즐겨찾기 버튼 상태
   const [Checked, setChecked] = useState(false);
 
+  // 컴포넌트 마운트시 localStorage에서 id로 즐겨찾기된 Card 확인
   useEffect(() => {
     let ids = localStorage.getItem("favorite");
     let arr = [];
@@ -23,6 +29,7 @@ const Card = ({ id, image_url, nickname, profile_image_url }) => {
     }
   }, []);
 
+  // 즐겨찾기 on/off 이벤트
   const onClickEvt = () => {
     let checkedState = Checked;
 
@@ -49,8 +56,10 @@ const Card = ({ id, image_url, nickname, profile_image_url }) => {
     }
   };
 
-  return (
-    <div className="card_container">
+  // card 화면구성
+  const cardView = () => {
+    return (
+      <div className="card_container">
       <div className="top_container">
         <img src={profile_image_url} className="ic_avatar_cat" />
         <div className="Tommy-Cummings">{nickname} </div>
@@ -74,7 +83,17 @@ const Card = ({ id, image_url, nickname, profile_image_url }) => {
         )}
       </div>
     </div>
-  );
+    );
+  }
+
+  // 스크랩한 것만 보기 활성화 되어있다면 Checked 된것만 화면에 표시
+  const checkedCard = () => {
+    return (Checked?cardView():null);
+
+  }
+
+  // 스크랩한 것만 보기 활성화 되어 있다면 checkedCard()로 Checked 된 Card만 출력, 비활성화 되어있으면 cardView()로 전체 Card list 출력
+  return onlyFavorite?checkedCard():cardView();
 };
 
 export default Card;

@@ -1,1 +1,1 @@
-export { addList, increasePage, fatchingOn, fatchingOff} from './cards';
+export { onlyFavoriteOn, onlyFavoriteOff } from './cards';

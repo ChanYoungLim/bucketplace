@@ -1,4 +1,2 @@
-export const ADD_LIST = 'ADD_LIST';
-export const INCREASE_PAGE = 'INCREASE_PAGE';
-export const FETCHING_ON = 'FETCHING_ON';
-export const FETCHING_OFF = 'FETCHING_OFF';
+export const ONLY_FAVORITE_ON = 'ONLY_FAVORITE_ON';
+export const ONLY_FAVORITE_OFF = 'ONLY_FAVORITE_OFF';

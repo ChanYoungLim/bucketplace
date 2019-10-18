@@ -1,17 +1,9 @@
-import {ADD_LIST, INCREASE_PAGE, FETCHING_ON, FETCHING_OFF} from '../actionTypes';
+import {ONLY_FAVORITE_ON, ONLY_FAVORITE_OFF} from '../actionTypes';
 
-export const addList = (dispatch, cards) => {
-    dispatch({type: ADD_LIST, payload: cards});
-};
-
-export const increasePage = dispatch => {
-    dispatch({type: INCREASE_PAGE});
+export const onlyFavoriteOn = dispatch => {
+    dispatch({type: ONLY_FAVORITE_ON});
 }
 
-export const fatchingOn = dispatch => {
-    dispatch({type: FETCHING_ON});
-}
-
-export const fatchingOff = dispatch => {
-    dispatch({type: FETCHING_OFF});
+export const onlyFavoriteOff = dispatch => {
+    dispatch({type: ONLY_FAVORITE_OFF});
 }

@@ -1,65 +1,23 @@
 import {
-    ADD_LIST,
-    INCREASE_PAGE,
-    FETCHING_ON,
-    FETCHING_OFF
+    ONLY_FAVORITE_ON,
+    ONLY_FAVORITE_OFF
 } from '../actionTypes';
-//import { createReducer } from 'redux-starter-kit';
 
 const initialState = {
-    page: 1,
-    fetching: false,
-    cards: [],
+    onlyFavorite: false,
 }
-
-// export default createReducer(initialState, {
-//     [ADD_LIST]: (state, action) => {
-//         return {
-//             ...state,
-//                 cards: state.cards.concat(action.payload)
-//         };
-//     },
-//     [INCREASE_PAGE]: (state, action) => {
-//         return {
-//             ...state,
-//                 page: state.page + 1
-//         };
-//     },
-//     [FETCHING_ON]: (state, action) => {
-//         return {
-//             ...state,
-//             fetching: true
-//         }
-//     },
-//     [FETCHING_OFF]: (state, action) => {
-//         return {
-//             ...state,
-//             fetching: false
-//         }
-//     },
-// });
 
 const cards = (state = initialState, action) => {
     switch (action.type){
-        case ADD_LIST:
+        case ONLY_FAVORITE_ON:
             return {
                 ...state,
-                cards: state.cards.concat(action.payload)
+                onlyFavorite: true
             };
-        case INCREASE_PAGE:
+        case ONLY_FAVORITE_OFF:
             return {
                 ...state,
-                page: state.page + 1
-            };
-        case FETCHING_ON:
-            return {
-                ...state,
-                fetching: true
-            };
-        case FETCHING_OFF:
-            return {
-                ...state,
-                fetching: false
+                onlyFavorite: false
             };    
         default:
             return state;
